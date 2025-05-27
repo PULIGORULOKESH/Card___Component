@@ -1,0 +1,156 @@
+@import url("https://fonts.cdnfonts.com/css/google-sans");
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Product Sans", sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #c8c3e8;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 195, 232, 1) 0%,
+    rgba(75, 75, 219, 1) 100%,
+    rgba(12, 192, 237, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: black;
+}
+
+.card_container {
+  perspective: 1000px;
+  height: 300px;
+  width: 250px;
+  margin: 100px auto;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card_container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.frontcard,
+.backcard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgb(211, 255, 12);
+}
+
+.frontcard {
+  background-color: red;
+  padding: 20px;
+}
+
+.frontcard img {
+  height: 200px;
+  width: 240px;
+  margin: 55px auto;
+  display: block;
+  max-width: 90%;
+}
+
+.backcard {
+  position: relative;
+  padding: 2px;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(74, 74, 145, 1) 19%,
+    rgba(76, 133, 73, 1) 46%,
+    rgba(252, 70, 107, 1) 100%
+  );
+
+  background-size: 300% 300%;
+  animation: flow-border 3s linear infinite;
+  transform: rotateY(180deg);
+}
+
+.backcard_content {
+  background-color: #d30ad3;
+  padding: 15px 20px 15px 20px;
+  border-radius: 10px;
+  height: 100%;
+  background: #eeaeca;
+  background: #833ab4;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: rgb(17, 18, 19);
+  overflow: auto;
+  text-align: left;
+}
+
+.name {
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: khaki;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+.description {
+  color: azure;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid brown;
+  background-color: aqua;
+  color: darkgreen;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: antiquewhite;
+  color: blueviolet;
+  border-color: cornflowerblue;
+}
+
+.frontcard:hover {
+  transform: rotateY(180deg);
+}
+
+@keyframes flow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
